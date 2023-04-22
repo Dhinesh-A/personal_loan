@@ -1,0 +1,126 @@
+<html><head>
+    <meta charset="UTF-8">
+<title> Loan eligibility prediction </title><style>
+
+body{
+background-image:url({{url_for('static',filename='back.jpg')}});
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:100% 100%;
+}
+form
+{
+margin: auto;
+width:50%;
+}
+ label {
+    display: inline-block;
+    width: 150px;
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  input {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: white;
+    padding: 5px;
+
+  }
+select {
+    width: 200px;
+    text-align: center;
+    border: 2px solid black; 
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+  }
+button{
+    width:50%;
+    text-align: center;
+    border: 5px solid black; 
+    border-radius: 30px;
+    background-color: transparent;
+    padding: 20px;
+    font-size: 40px;
+}
+
+input::placeholder {
+			color: black;
+		}
+select::placeholder {
+			color: black;
+		}
+
+</style>
+</head>
+ 
+<h1 align="center">Predicting Personal Loan Approval</h1>
+<hr width="100%" color="black" size="8"/>
+
+<form action='/getdata' method="POST"  >  <br><br>
+
+<label>Loan Id:</label>  
+      <input type="number" name="Loan_ID" placeholder="--Enter any number--" id="Loan_ID" required ="required"> <br><br>
+
+<label for="Gender">Gender:</label>
+        <select name="Gender" id="Gender"placeholder="--Select gender--"  >  <br></br>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+        <br><br>
+<label for="Married">Married :</label>
+        <select name="Married" id="Married" placeholder="--Select Married --"  >
+           <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select><br><br>
+<label for="Dependents">Dependents:</label>
+        <select name="Dependents" id="Dependents" placeholder="--Select Dependents--"><br>
+            <option value="0">0</option>
+            <option value="1">1</option>
+          <option value="2">2</option>
+         <option value="3">3</option>
+         </select><br><br>
+<label for="Education">Education:</label> 
+        <select name="Education" id="Education" placeholder="--Select Education--"> 
+            <option value="0">Graduate</option>
+            <option value="1">Not Graduate</option>
+        </select><br> <br>
+<label for="Self_Employed">Self_Employed:</label>
+        <select name="Self_Employed" id="self_Employed" placeholder="--Select a Self_Employed--"> 
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select> <br>  <br>
+
+<label for="credit_History">Credit_History:</label> 
+        <select name="Credit_History" id="Credit_History" placeholder="--Select a Credit_History--"> 
+            <option value="1.0">1</option>
+            <option value="0.0">0</option>
+           
+        </select><br><br>
+<label for="Property_Area">Property_Area:</label>
+        <select name="Property_Area" id="Property_Area" placeholder="--Select Property_Area--"><br>
+            <option value="0">Rural</option>
+            <option value="2">Urban</option>
+          <option value="1">Semi Urban</option>
+         </select><br><br>
+<label>ApplicantIncome: </label>    
+      <input type="number" name="ApplicantIncome" placeholder="--Select a ApplicantIncome--"> <br><br>
+<label>LoanAmount:</label>
+       <input type="number" placeholder="--Enter a LoanAmount--" name="LoanAmount"> </br><br>
+    <label>CoapplicantIncome:</label>
+      <input type="number" name="CoapplicantIncome" placeholder="--Enter a CoapplicantIncome--"> <br><br>
+<label>Loan_Amount_Term:</label>
+  <input type="number" placeholder="--Enter a Loan_Amount_Term--" name="Loan_Amount_Term" id="Loan_Amount_Term"> <br><br><br><br>
+  <button type="submit" class="btn btn-primary btn-block btn-large" width="50%"> Predict </button>
+  </form><br><br>
+<h2>
+<b>
+{{ prediction_results }}
+</b>
+</h2>
+</body>
+</html>

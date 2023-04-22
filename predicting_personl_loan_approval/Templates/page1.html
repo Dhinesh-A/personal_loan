@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Personal Loan Approval Prediction</title>
+    <style>
+    body{
+background-image:url({{url_for('static',filename='front.jpg')}});
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-size:100% 100%;
+filter:blur(-0.89px);
+
+}
+h1,h2{ 
+        text-align: center;
+        text-color: white;
+}
+    a{
+    width:50%;
+    text-align: center;
+    font-size:30px;
+    border: 5px solid black; 
+    border-radius: 15px;
+    background-color: white;
+    padding: 8px; }
+</style>
+  </head>
+  <body>
+      <h1>Welcome</h1>
+      <hr width="100%" color="black" size="5"/>
+<h2>Predicting Personal Loan Approval</h2>      <hr width="25%" color="black" size="2"/><br><br>
+<h3>        Predicting personal loan approval typically involves analyzing a variety of factors related to the borrower, such as their credit score, income, employment history, debt-to-income ratio, and other relevant financial information. It is important to note that while machine learning models can provide valuable insights and predictions on loan approval, they should not be the sole basis for making lending decisions. Lenders should also consider other factors such as the borrower's personal circumstances and any additional risk factors that may not be captured in the data.</p>
+</h3>
+      <a href="{{url_for('page2')}}"> check now </a>
+  </body>
+</html>
